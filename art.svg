@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- sky: deep indigo, warming toward the waterline -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04060E"/>
+      <stop offset="0.28" stop-color="#070B18"/>
+      <stop offset="0.58" stop-color="#101E38"/>
+      <stop offset="0.82" stop-color="#1B3050"/>
+      <stop offset="1" stop-color="#26445F"/>
+    </linearGradient>
+    <!-- sea: lit teal at the horizon, near-black in the trough -->
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12505F"/>
+      <stop offset="0.16" stop-color="#0C3947"/>
+      <stop offset="0.55" stop-color="#07242F"/>
+      <stop offset="1" stop-color="#04141D"/>
+    </linearGradient>
+    <!-- wide warm bleed around the moon -->
+    <radialGradient id="bleed" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFC43A" stop-opacity="0.30"/>
+      <stop offset="0.35" stop-color="#FFB703" stop-opacity="0.13"/>
+      <stop offset="0.68" stop-color="#FF9E00" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#FF9E00" stop-opacity="0"/>
+    </radialGradient>
+    <!-- moon body -->
+    <radialGradient id="moon" cx="0.36" cy="0.27" r="0.82">
+      <stop offset="0" stop-color="#FFFBE8"/>
+      <stop offset="0.18" stop-color="#FFF0C0"/>
+      <stop offset="0.42" stop-color="#FFDA84"/>
+      <stop offset="0.68" stop-color="#FFBE2C"/>
+      <stop offset="0.88" stop-color="#F09B00"/>
+      <stop offset="1" stop-color="#D07C00"/>
+    </radialGradient>
+    <!-- volume: darkens the far limb so the disc reads as a sphere -->
+    <radialGradient id="moonShade" cx="0.42" cy="0.33" r="0.62">
+      <stop offset="0" stop-color="#FFF7D6" stop-opacity="0"/>
+      <stop offset="0.56" stop-color="#FFC44D" stop-opacity="0"/>
+      <stop offset="0.84" stop-color="#E08A00" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#A95300" stop-opacity="0.40"/>
+    </radialGradient>
+    <radialGradient id="sparkGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.26" stop-color="#FFF3C0" stop-opacity="0.65"/>
+      <stop offset="0.62" stop-color="#FFC42E" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FFB703" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pool" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFDF9C" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#FFC24B" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFB703" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lineGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFD98A" stop-opacity="0.60"/>
+      <stop offset="0.5" stop-color="#FFF0BE" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="1"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.46" r="0.72">
+      <stop offset="0.50" stop-color="#01030A" stop-opacity="0"/>
+      <stop offset="0.82" stop-color="#01030A" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#01030A" stop-opacity="0.42"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ── sky ────────────────────────────────────────────────────────── -->
+  <rect x="0" y="0" width="1024" height="718" fill="url(#sky)"/>
+  <circle cx="668" cy="360" r="560" fill="url(#bleed)"/>
+
+  <!-- static star field -->
+  <g fill="#FFE7A6">
+    <circle cx="120" cy="96" r="3.2" opacity="0.85"/>
+    <circle cx="212" cy="190" r="2.2" opacity="0.55"/>
+    <circle cx="66" cy="268" r="2.6" opacity="0.60"/>
+    <circle cx="168" cy="470" r="2.2" opacity="0.45"/>
+    <circle cx="258" cy="300" r="2.0" opacity="0.40"/>
+    <circle cx="92" cy="600" r="2.2" opacity="0.35"/>
+    <circle cx="330" cy="90" r="2.0" opacity="0.50"/>
+    <circle cx="962" cy="150" r="2.2" opacity="0.50"/>
+    <circle cx="1004" cy="330" r="2.0" opacity="0.40"/>
+    <circle cx="980" cy="560" r="2.4" opacity="0.45"/>
+    <circle cx="884" cy="60" r="2.6" opacity="0.60"/>
+    <circle cx="424" cy="60" r="2.4" opacity="0.55"/>
+    <circle cx="300" cy="640" r="2.0" opacity="0.35"/>
+    <circle cx="60" cy="430" r="2.0" opacity="0.35"/>
+    <circle cx="520" cy="662" r="2.2" opacity="0.30"/>
+    <circle cx="1000" cy="640" r="2.0" opacity="0.30"/>
+    <circle cx="60" cy="60" r="2.0" opacity="0.40"/>
+    <circle cx="860" cy="662" r="1.8" opacity="0.30"/>
+    <circle cx="340" cy="470" r="2.2" opacity="0.45"/>
+  </g>
+
+  <!-- stars being pulled in: tails point outward, heads stall at the halo -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M36 196 L218 246" stroke="#FFD98A" stroke-width="9" opacity="0.10"/>
+    <path d="M36 196 L218 246" stroke="#FFE7A6" stroke-width="2.6" opacity="0.55"/>
+    <path d="M196 26 L302 101" stroke="#FFD98A" stroke-width="9" opacity="0.10"/>
+    <path d="M196 26 L302 101" stroke="#FFE7A6" stroke-width="2.6" opacity="0.55"/>
+    <path d="M86 520 L250 475" stroke="#FFD98A" stroke-width="9" opacity="0.09"/>
+    <path d="M86 520 L250 475" stroke="#FFE7A6" stroke-width="2.4" opacity="0.45"/>
+    <path d="M1016 88 L929 156" stroke="#FFD98A" stroke-width="9" opacity="0.10"/>
+    <path d="M1016 88 L929 156" stroke="#FFE7A6" stroke-width="2.6" opacity="0.55"/>
+    <path d="M300 120 L407 190" stroke="#FFD98A" stroke-width="8" opacity="0.09"/>
+    <path d="M300 120 L407 190" stroke="#FFE7A6" stroke-width="2.2" opacity="0.45"/>
+    <path d="M236 332 L356 340" stroke="#FFD98A" stroke-width="7" opacity="0.08"/>
+    <path d="M236 332 L356 340" stroke="#FFE7A6" stroke-width="2.0" opacity="0.40"/>
+    <path d="M300 621 L413 540" stroke="#FFD98A" stroke-width="8" opacity="0.09"/>
+    <path d="M300 621 L413 540" stroke="#FFE7A6" stroke-width="2.2" opacity="0.45"/>
+  </g>
+  <g fill="#FFF6DA">
+    <circle cx="218" cy="246" r="3.6" opacity="0.90"/>
+    <circle cx="302" cy="101" r="3.2" opacity="0.90"/>
+    <circle cx="250" cy="475" r="3.0" opacity="0.80"/>
+    <circle cx="929" cy="156" r="3.4" opacity="0.90"/>
+    <circle cx="407" cy="190" r="2.8" opacity="0.80"/>
+    <circle cx="356" cy="340" r="2.6" opacity="0.75"/>
+    <circle cx="413" cy="540" r="3.0" opacity="0.80"/>
+  </g>
+
+  <!-- ── halo: soft ring built from stacked strokes ─────────────────── -->
+  <circle cx="668" cy="360" r="296" fill="none" stroke="#FFB703" stroke-width="26" opacity="0.05"/>
+  <circle cx="668" cy="360" r="306" fill="none" stroke="#FFC24B" stroke-width="12" opacity="0.07"/>
+  <circle cx="668" cy="360" r="318" fill="none" stroke="#FFD98A" stroke-width="7" opacity="0.10"/>
+  <circle cx="668" cy="360" r="334" fill="none" stroke="#FFE7A6" stroke-width="3" opacity="0.14"/>
+  <circle cx="668" cy="360" r="352" fill="none" stroke="#FFE7A6" stroke-width="1.6" opacity="0.10"/>
+
+  <!-- ── the moon ───────────────────────────────────────────────────── -->
+  <circle cx="668" cy="360" r="292" fill="url(#moon)"/>
+  <circle cx="668" cy="360" r="292" fill="url(#moonShade)"/>
+
+  <!-- soft, low-opacity craters -->
+  <g>
+    <circle cx="560" cy="250" r="58" fill="#C97A08" opacity="0.13"/>
+    <circle cx="560" cy="250" r="58" fill="none" stroke="#B96A00" stroke-width="3" opacity="0.09"/>
+    <circle cx="742" cy="290" r="34" fill="#C97A08" opacity="0.12"/>
+    <circle cx="690" cy="486" r="64" fill="#C97A08" opacity="0.14"/>
+    <circle cx="690" cy="486" r="64" fill="none" stroke="#B96A00" stroke-width="4" opacity="0.09"/>
+    <circle cx="590" cy="420" r="30" fill="#C97A08" opacity="0.11"/>
+    <circle cx="838" cy="430" r="24" fill="#C97A08" opacity="0.11"/>
+    <circle cx="520" cy="470" r="20" fill="#C97A08" opacity="0.10"/>
+    <circle cx="790" cy="520" r="30" fill="#C97A08" opacity="0.12"/>
+    <circle cx="640" cy="600" r="22" fill="#C97A08" opacity="0.10"/>
+    <circle cx="500" cy="320" r="16" fill="#FFF0C0" opacity="0.22"/>
+    <circle cx="740" cy="200" r="14" fill="#FFF0C0" opacity="0.20"/>
+    <circle cx="600" cy="540" r="13" fill="#FFF0C0" opacity="0.14"/>
+  </g>
+
+  <!-- where the hook bites the limb -->
+  <circle cx="498" cy="602" r="22" fill="#B25F00" opacity="0.22"/>
+  <circle cx="498" cy="602" r="10" fill="#A24F00" opacity="0.26"/>
+  <path d="M506 590 l 16 -7" fill="none" stroke="#B25F00" stroke-width="3" opacity="0.30" stroke-linecap="round"/>
+  <path d="M500 612 l 8 16" fill="none" stroke="#B25F00" stroke-width="3" opacity="0.26" stroke-linecap="round"/>
+
+  <!-- ── sea ────────────────────────────────────────────────────────── -->
+  <rect x="0" y="718" width="1024" height="306" fill="url(#sea)"/>
+  <ellipse cx="668" cy="720" rx="420" ry="52" fill="url(#pool)"/>
+  <rect x="0" y="716.5" width="1024" height="3" fill="#2C7180" opacity="0.55"/>
+
+  <!-- broken golden road on the water, drifting toward the boat -->
+  <g>
+    <rect x="524" y="724" width="288" height="10" rx="5" fill="#FFF6D8" opacity="0.95"/>
+    <rect x="560" y="742" width="118" height="9" rx="4.5" fill="#FFF0C4" opacity="0.88"/>
+    <rect x="700" y="742" width="96" height="9" rx="4.5" fill="#FFF0C4" opacity="0.82"/>
+    <rect x="512" y="760" width="92" height="9" rx="4.5" fill="#FFE7AE" opacity="0.80"/>
+    <rect x="622" y="760" width="110" height="9" rx="4.5" fill="#FFE7AE" opacity="0.76"/>
+    <rect x="746" y="760" width="44" height="9" rx="4.5" fill="#FFE7AE" opacity="0.58"/>
+    <rect x="470" y="780" width="74" height="8" rx="4" fill="#FFDFA0" opacity="0.72"/>
+    <rect x="560" y="780" width="104" height="8" rx="4" fill="#FFDFA0" opacity="0.68"/>
+    <rect x="430" y="802" width="62" height="8" rx="4" fill="#FFD48C" opacity="0.64"/>
+    <rect x="506" y="802" width="88" height="8" rx="4" fill="#FFD48C" opacity="0.60"/>
+    <rect x="606" y="802" width="40" height="8" rx="4" fill="#FFD48C" opacity="0.48"/>
+    <rect x="384" y="826" width="52" height="8" rx="4" fill="#FFC96E" opacity="0.56"/>
+    <rect x="448" y="826" width="76" height="8" rx="4" fill="#FFC96E" opacity="0.52"/>
+    <rect x="330" y="852" width="44" height="7" rx="3.5" fill="#FFC05A" opacity="0.48"/>
+    <rect x="386" y="852" width="62" height="7" rx="3.5" fill="#FFC05A" opacity="0.44"/>
+    <rect x="282" y="880" width="36" height="7" rx="3.5" fill="#FFB848" opacity="0.40"/>
+    <rect x="328" y="880" width="48" height="7" rx="3.5" fill="#FFB848" opacity="0.36"/>
+    <rect x="238" y="910" width="30" height="6" rx="3" fill="#FFB23C" opacity="0.33"/>
+    <rect x="276" y="910" width="36" height="6" rx="3" fill="#FFB23C" opacity="0.30"/>
+    <rect x="200" y="942" width="24" height="6" rx="3" fill="#FFAC33" opacity="0.26"/>
+    <rect x="232" y="942" width="28" height="6" rx="3" fill="#FFAC33" opacity="0.23"/>
+    <rect x="168" y="976" width="18" height="5" rx="2.5" fill="#FFA62C" opacity="0.20"/>
+    <rect x="194" y="976" width="20" height="5" rx="2.5" fill="#FFA62C" opacity="0.18"/>
+    <rect x="142" y="1006" width="14" height="4" rx="2" fill="#FFA62C" opacity="0.15"/>
+    <rect x="164" y="1006" width="16" height="4" rx="2" fill="#FFA62C" opacity="0.13"/>
+  </g>
+  <!-- loose glints scattered along the road -->
+  <g fill="#FFF6D8">
+    <rect x="606" y="772" width="9" height="3.4" rx="1.7" opacity="0.80"/>
+    <rect x="500" y="792" width="7" height="3" rx="1.5" opacity="0.70"/>
+    <rect x="688" y="790" width="11" height="3" rx="1.5" opacity="0.55"/>
+    <rect x="418" y="818" width="8" height="3" rx="1.5" opacity="0.55"/>
+    <rect x="352" y="842" width="7" height="2.6" rx="1.3" opacity="0.45"/>
+    <rect x="470" y="846" width="9" height="2.6" rx="1.3" opacity="0.42"/>
+    <rect x="300" y="896" width="6" height="2.4" rx="1.2" opacity="0.35"/>
+  </g>
+
+  <!-- ── ripple rings racing out from the boat ─────────────────────── -->
+  <g fill="none" stroke-linecap="round">
+    <ellipse cx="184" cy="898" rx="170" ry="44" stroke="#17646F" stroke-width="2.6" opacity="0.30"/>
+    <ellipse cx="184" cy="898" rx="128" ry="33" stroke="#1D7A86" stroke-width="2.8" opacity="0.42"/>
+    <ellipse cx="184" cy="899" rx="90" ry="23" stroke="#2E93A0" stroke-width="3" opacity="0.52"/>
+    <ellipse cx="184" cy="900" rx="58" ry="15" stroke="#4FBDC6" stroke-width="3" opacity="0.55"/>
+    <ellipse cx="184" cy="901" rx="32" ry="8.5" stroke="#7FD8DC" stroke-width="3" opacity="0.50"/>
+  </g>
+
+  <!-- gentle framing shadow -->
+  <rect x="0" y="0" width="1024" height="1024" fill="url(#vig)"/>
+
+  <!-- ── boat and fisherman ─────────────────────────────────────────── -->
+  <g>
+    <!-- hull -->
+    <path d="M96 886 C100 918 136 936 186 936 C238 936 264 912 274 884 Z" fill="#05070E"/>
+    <!-- bow post -->
+    <path d="M274 884 L283 864" fill="none" stroke="#05070E" stroke-width="6" stroke-linecap="round"/>
+    <!-- gunwale catching the sky -->
+    <path d="M98 886 C140 896 232 896 273 884" fill="none" stroke="#2C7180" stroke-width="3.4" opacity="0.55" stroke-linecap="round"/>
+    <!-- leg -->
+    <path d="M200 890 C214 884 228 879 240 882" fill="none" stroke="#05070E" stroke-width="13" stroke-linecap="round"/>
+    <path d="M240 882 L252 892" fill="none" stroke="#05070E" stroke-width="10" stroke-linecap="round"/>
+    <!-- torso, leaning hard back -->
+    <path d="M198 892 C180 880 166 852 162 828 C160 816 162 808 168 802 L186 812 C188 836 198 860 210 878 Z" fill="#05070E"/>
+    <!-- head and sou'wester -->
+    <circle cx="160" cy="788" r="13" fill="#05070E"/>
+    <ellipse cx="157" cy="781" rx="21" ry="5.6" fill="#05070E"/>
+    <path d="M146 780 C148 768 156 762 166 763 C174 764 177 771 177 779 Z" fill="#05070E"/>
+    <!-- arms hauling on the rod -->
+    <path d="M174 818 L214 838" fill="none" stroke="#05070E" stroke-width="9" stroke-linecap="round"/>
+    <path d="M170 828 L210 848" fill="none" stroke="#05070E" stroke-width="8" stroke-linecap="round"/>
+    <!-- coral scarf, snapping in the wind -->
+    <path d="M172 804 C154 795 136 791 120 796 C134 803 150 811 166 815 Z" fill="#FF5964"/>
+    <circle cx="170" cy="806" r="5.6" fill="#FF5964"/>
+    <!-- rod: butt behind the hands, belly bowed away from the line -->
+    <path d="M196 848 Q300 834 386 762" fill="none" stroke="#05070E" stroke-width="6.5" stroke-linecap="round"/>
+    <path d="M300 830 Q344 812 386 762" fill="none" stroke="#0B1220" stroke-width="3.6" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── the taut line and the hook spark ───────────────────────────── -->
+  <path d="M386 762 L500 599" fill="none" stroke="#FFA800" stroke-width="10" opacity="0.20" stroke-linecap="round"/>
+  <path d="M386 762 L500 599" fill="none" stroke="#FFD98A" stroke-width="4.6" opacity="0.50" stroke-linecap="round"/>
+  <path d="M386 762 L500 599" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="500" cy="599" r="56" fill="url(#sparkGlow)"/>
+  <path d="M500 571 L517 599 L500 627 L483 599 Z" fill="#FFF3C0"/>
+  <path d="M500 579 L511 599 L500 619 L489 599 Z" fill="#FFFFFF"/>
+  <g stroke="#FFF6DA" stroke-linecap="round" opacity="0.92">
+    <path d="M500 566 L500 552" stroke-width="3"/>
+    <path d="M526 587 L538 581" stroke-width="3"/>
+    <path d="M474 587 L462 581" stroke-width="3"/>
+    <path d="M520 613 L530 622" stroke-width="2.4"/>
+    <path d="M480 613 L470 622" stroke-width="2.4"/>
+  </g>
+
+  <!-- ── birds fleeing the light ────────────────────────────────────── -->
+  <g fill="none" stroke="#05070E" stroke-width="5" stroke-linecap="round">
+    <path d="M97 258 L120 279 L143 255"/>
+    <path d="M179 190 L196 206 L214 188" stroke-width="4"/>
+    <path d="M53 330 L67 346 L83 327" stroke-width="3.4"/>
+  </g>
+</svg>
